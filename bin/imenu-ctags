@@ -45,8 +45,10 @@ if ( $lc_mode eq "man" ) {
 } elsif (-x "$ENV{HOME}/system-config/etc/imenu/$lc_mode") {
   system("$ENV{HOME}/system-config/etc/imenu/$lc_mode $stdin > ~/.imenu-ctags.$$");
 } else {
-    my %mode_map = (
-        cperl => "perl",
+  my %mode_map =
+    (
+     cperl => "perl",
+     python3 => "python",
     );
 
     $mode = $mode_map{$mode} if $mode_map{$mode};
